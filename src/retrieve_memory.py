@@ -1,4 +1,3 @@
-# --- DESIGN LOGIC ---
 # Instead of a basic vector search, I'm using Graph-RAG.
 # 1. Map the query to an Entity (The Anchor).
 # 2. Traverse to find all HAS_CLAIM nodes.
@@ -8,7 +7,6 @@
 from neo4j import GraphDatabase
 import logging
 
-# Same credentials as before
 URI = "neo4j+s://4266d4ef.databases.neo4j.io"
 AUTH = ("4266d4ef", "S9cieujK6_0eSAO97NdfWi0kIxAn6_FSoqO-Q2kntA8")
 
