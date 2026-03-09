@@ -6,7 +6,7 @@ AUTH = ("4266d4ef", "S9cieujK6_0eSAO97NdfWi0kIxAn6_FSoqO-Q2kntA8")
 def check_entities():
     driver = GraphDatabase.driver(URI, auth=AUTH)
     with driver.session() as session:
-        # This asks for a list of the first 10 names in your database
+        # This asks for a list of the first 10 names in our database
         result = session.run("MATCH (e:Entity) RETURN e.name LIMIT 10")
         names = [record["e.name"] for record in result]
         
