@@ -1,21 +1,18 @@
-# Enron Memory Graph-RAG Explorer
-An intelligent memory graph that transforms unstructured email communication into a grounded, queryable knowledge base using Neo4j and Streamlit.
+# Enron Memory Graph RAG Explorer
+An intelligent memory graph that transforms unstructured email communication into a grounded knowledge base, leveraging Neo4j and Streamlit.
 
-Design & Methodology
-1. Ontology & Data Model
-The system uses a Bipartite Graph Structure:
+### Design & Methodology
+1. **Ontology & Data Model**
+Our Bipartite Graph Structure:
+- **Nodes**: Entities (People/Organizations) & Claims (Assertions/Statements extracted from text).
+- **Edges**: Relationship types include MENTIONS, HAS_CLAIM, WORKS_FOR.
 
-Nodes: Categorized as Entity (People/Organizations) and Claim (Assertions/Statements extracted from text).
+**Grounding**:
+Each Claim node has a quote property & a source_file property. This way, our AI cannot fabricate without a receipt.
 
-Edges: Relationship types include MENTIONS, HAS_CLAIM, and WORKS_FOR.
+2. **Extraction & Canonicalization (Dedup)**
+**Extraction Contract**: JSON Schema enforcement for LLM extraction. Each claim must be atomic & contain a direct quote.
 
-The "Grounding" Layer: Every Claim node stores a quote and source_file property, ensuring the AI can never hallucinate without a "receipt."
-
-2. Extraction & Canonicalization (Dedup)
-Extraction Contract: We use a JSON schema enforcement to ensure the LLM extracts atomic claims. Every claim must have a direct quote for provenance.
-
-Deduplication Strategy:
-
-Entity Resolution: We use case-insensitive MERGE operations in Cypher to collapse multiple mentions (e.g., "Sanders" vs "sanders") into a single unique node.
-
-Relationship Logic: Relationships are updated with last_seen timestamps to handle evolving information.
+**Deduplication Strategy**:
+- **Entity Resolution**: MERGE operation in Cypher for case-insensitive entity resolution (e.g., 'Sanders' & 'sanders' become one node).
+- **Relationship Logic**: Relationships contain timestamps for 'last_seen' to account for changing information.
