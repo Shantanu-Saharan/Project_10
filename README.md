@@ -63,7 +63,7 @@ It allows the AI system to **explain why a decision changed over time**, rather 
 
 ---
 
-## 🔐 Grounding, Safety, & Permissions
+## Grounding, Safety, & Permissions
 
 ### **Hard Citations**
 
