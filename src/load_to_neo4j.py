@@ -2,6 +2,8 @@
 # Things I have tried to clear the error already - URI and Auth double checked, 
 # I think I should see if the URI/Auth credentials are not changed after I downloaded them 
 
+# I have changed the URI na Auth to a new one and now the loading works fine.
+
 import os
 import json
 import logging
