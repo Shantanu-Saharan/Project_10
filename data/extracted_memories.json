@@ -1,0 +1,559 @@
+[
+  {
+    "entities": [
+      {
+        "name": "Richard B. Sanders",
+        "label": "PERSON"
+      },
+      {
+        "name": "bwanaro1",
+        "label": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "source_entity": "Richard B. Sanders",
+        "target_entity": "bwanaro1",
+        "relation_type": "TRIED_TO_CONTACT"
+      }
+    ],
+    "claims": [
+      {
+        "subject": "b..sanders@enron.com",
+        "fact": "tried to call bwanaro1@hotmail.com",
+        "evidence_quote": "I tried to call you but could not get through.",
+        "timestamp": "Thu, 12 Jul 2001 10:27:41 -0700 (PDT)",
+        "source_file": "sanders-r/sent_items/298",
+        "confidence": 1.0
+      }
+    ],
+    "metadata": {
+      "file": "sanders-r/sent_items/298."
+    }
+  },
+  {
+    "entities": [
+      {
+        "name": "The Economist",
+        "label": "ORG"
+      },
+      {
+        "name": "John Mayo",
+        "label": "PERSON"
+      },
+      {
+        "name": "Marconi",
+        "label": "ORG"
+      },
+      {
+        "name": "European Commission",
+        "label": "ORG"
+      },
+      {
+        "name": "Compaq Computer",
+        "label": "ORG"
+      },
+      {
+        "name": "Microsoft",
+        "label": "ORG"
+      },
+      {
+        "name": "Baltimore Technologies",
+        "label": "ORG"
+      },
+      {
+        "name": "Webvan",
+        "label": "ORG"
+      },
+      {
+        "name": "Real Madrid",
+        "label": "ORG"
+      },
+      {
+        "name": "Lloyds TSB",
+        "label": "ORG"
+      },
+      {
+        "name": "CSFB",
+        "label": "ORG"
+      },
+      {
+        "name": "Euronext",
+        "label": "ORG"
+      },
+      {
+        "name": "Merrill Lynch",
+        "label": "ORG"
+      },
+      {
+        "name": "FTSE International",
+        "label": "ORG"
+      }
+    ],
+    "relationships": [
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Marconi",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "European Commission",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Compaq Computer",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Microsoft",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Baltimore Technologies",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Webvan",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Real Madrid",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Lloyds TSB",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "CSFB",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Euronext",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "Merrill Lynch",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      },
+      {
+        "source_entity": "The Economist",
+        "target_entity": "FTSE International",
+        "relation_type": "MENTIONED_IN_ARTICLE"
+      }
+    ],
+    "claims": [
+      {
+        "subject": "Argentina",
+        "fact": "government bonds fell sharply",
+        "evidence_quote": "Emerging markets were jittery. Argentina\u2019s government bonds fell sharply as investors fretted about a default.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Brazil",
+        "fact": "real hit intra-day lows against the dollar",
+        "evidence_quote": "The Brazilian real hit intra-day lows against the dollar in response.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Turkey",
+        "fact": "lira fell after the country failed to persuade the IMF to release its latest tranche of funds",
+        "evidence_quote": "Turkey\u2019s lira fell after the country failed to persuade the IMF to release its latest tranche of funds.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Poland",
+        "fact": "zloty weakened",
+        "evidence_quote": "The Polish zloty and Hungarian forint also weakened.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Hungary",
+        "fact": "forint weakened",
+        "evidence_quote": "The Polish zloty and Hungarian forint also weakened.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Singapore",
+        "fact": "slipped into recession and its dollar hit an 11-year low against America\u2019s",
+        "evidence_quote": "Singapore slipped into recession and its dollar hit an 11-year low against America\u2019s.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Dollar",
+        "fact": "hit a 16-year high in real trade-weighted terms",
+        "evidence_quote": "One cause of emerging economies\u2019 ills has been the strength of the dollar, which this week hit a 16-year high in real trade-weighted terms.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "American economy",
+        "fact": "unemployment in June rose to 4.5%",
+        "evidence_quote": "Unemployment in June rose to 4.5%.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "German economy",
+        "fact": "institute for economic research published the lowest-yet forecast for German economic growth in 2001: a sorry 1%",
+        "evidence_quote": "The German Institute for Economic Research published the lowest-yet forecast for German economic growth in 2001: a sorry 1%.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "G7 finance ministers",
+        "fact": "meeting concluded on a cheerful note",
+        "evidence_quote": "A meeting of G7 finance ministers concluded on a cheerful note.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "AT&T",
+        "fact": "plans to break up into four separate units began with the spin-off of its wireless arm",
+        "evidence_quote": "AT\u2019T\u2019s plans to break up into four separate units began with the spin-off of its wireless arm.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Comcast",
+        "fact": "offered $44.5 billion for AT&T Broadband",
+        "evidence_quote": "However, the company\u2019s low share price prompted Comcast, an American cable rival, to offer $44.5 billion for AT\u2019T Broadband, which was to have been spun off later this year.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Marconi",
+        "fact": "John Mayo was forced to resign only two weeks before he was to have become chief executive",
+        "evidence_quote": "John Mayo was forced to resign only two weeks before he was to have become chief executive of Marconi ,after a profit warning by the beleaguered British telecoms-equipment company.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "European Commission",
+        "fact": "raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries",
+        "evidence_quote": "The European Commission raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Compaq Computer",
+        "fact": "gave a warning that profits in its latest quarter would be down sharply",
+        "evidence_quote": "Compaq Computer, the world\u2019s second-biggest PC maker, gave a warning that profits in its latest quarter would be down sharply.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Microsoft",
+        "fact": "is to allow PC makers more freedom to change the Windows desktop",
+        "evidence_quote": "Microsoft is to allow PC makers more freedom to change the Windows desktop.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Baltimore Technologies",
+        "fact": "shed its chief executive, Fran Rooney",
+        "evidence_quote": "Baltimore Technologies, once one of the most admired Internet companies, shed its chief executive, Fran Rooney.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Webvan",
+        "fact": "said that it would close with the loss of 2,000 jobs",
+        "evidence_quote": "Webvan, an American online grocer once valued at $8.7 billion, said that it would close with the loss of 2,000 jobs.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Real Madrid",
+        "fact": "paid a record euro77m ($66m) for Zinedine Zidane, a French international",
+        "evidence_quote": "Real Madrid paid a record euro77m ($66m) for Zinedine Zidane, a French international.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Lloyds TSB",
+        "fact": "bid for Abbey National was blocked by the British government on competition grounds",
+        "evidence_quote": "As expected, the British government blocked an \u00a318 billion ($25 billion) bid by Lloyds TSB for Abbey National on competition grounds.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "CSFB",
+        "fact": "ousted its chief executive, Allen Wheat",
+        "evidence_quote": "CSFB, a Wall Street bank under regulatory investigation for its handling of initial public offerings, ousted its chief executive, Allen Wheat.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Euronext",
+        "fact": "made a poor showing on its own stockmarket debut",
+        "evidence_quote": "Euronext, the outcome of a merger of bourses in Amsterdam, Brussels and Paris, made a poor showing on its own stockmarket debut.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "Merrill Lynch",
+        "fact": "sought to reassure sceptical customers of the impartiality of its analysts by stopping them owning shares in companies that they cover",
+        "evidence_quote": "Merrill Lynch, America\u2019s largest stockbroker, sought to reassure sceptical customers of the impartiality of its analysts by stopping them owning shares in companies that they cover.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      },
+      {
+        "subject": "FTSE International",
+        "fact": "launched FTSE4Good, a set of stockmarket indices for socially responsible investment",
+        "evidence_quote": "FTSE International, a British stockmarket indexer, launched FTSE4Good, a set of stockmarket indices for socially responsible investment.",
+        "timestamp": "Thu, 12 Jul 2001 14:18:00 -0700 (PDT)",
+        "source_file": "dasovich-j/notes_inbox/11956",
+        "confidence": 0.8
+      }
+    ],
+    "metadata": {
+      "file": "dasovich-j/notes_inbox/11956."
+    }
+  },
+  {
+    "entities": [
+      {
+        "name": "John A. Misteli",
+        "label": "PERSON"
+      },
+      {
+        "name": "Jeff Skilling",
+        "label": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "source_entity": "John A. Misteli",
+        "target_entity": "Jeff Skilling",
+        "relation_type": "CONTACT"
+      }
+    ],
+    "claims": [
+      {
+        "subject": "Gas turbine power plants",
+        "fact": "could be operational next summer",
+        "evidence_quote": "which could be operational next summer",
+        "timestamp": "Mon, 4 Dec 2000 03:23:00 -0800 (PST)",
+        "source_file": "skilling-j/notes_inbox/97",
+        "confidence": 1.0
+      }
+    ],
+    "metadata": {
+      "file": "skilling-j/notes_inbox/97."
+    }
+  },
+  {
+    "entities": [
+      {
+        "name": "Jacqueline Kelly",
+        "label": "PERSON"
+      },
+      {
+        "name": "Jeff Dasovich",
+        "label": "PERSON"
+      },
+      {
+        "name": "Ted Chin",
+        "label": "PERSON"
+      },
+      {
+        "name": "Kimberely Kupiecki",
+        "label": "PERSON"
+      },
+      {
+        "name": "Meg St. John",
+        "label": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "source_entity": "Jacqueline Kelly",
+        "target_entity": "Jeff Dasovich",
+        "relation_type": "TEAM_MEMBER"
+      },
+      {
+        "source_entity": "Jacqueline Kelly",
+        "target_entity": "Ted Chin",
+        "relation_type": "TEAM_MEMBER"
+      },
+      {
+        "source_entity": "Jacqueline Kelly",
+        "target_entity": "Kimberely Kupiecki",
+        "relation_type": "TEAM_MEMBER"
+      }
+    ],
+    "claims": [
+      {
+        "subject": "Jacqueline Kelly",
+        "fact": "Jacqueline Kelly's team assignment was changed to Atlantic 4",
+        "evidence_quote": "You are now assigned to Atlantic 4.",
+        "timestamp": "Wednesday, November 08, 2000 11:32 AM",
+        "source_file": "dasovich-j/all_documents/3252",
+        "confidence": 1.0
+      },
+      {
+        "subject": "Jeff Dasovich",
+        "fact": "Jeff Dasovich has no parking",
+        "evidence_quote": "i have no parking.",
+        "timestamp": "Wednesday, November 08, 2000 4:52 PM",
+        "source_file": "dasovich-j/all_documents/3252",
+        "confidence": 1.0
+      }
+    ],
+    "metadata": {
+      "file": "dasovich-j/all_documents/3252."
+    }
+  },
+  {
+    "entities": [
+      {
+        "name": "Nancy Sellers",
+        "label": "PERSON"
+      },
+      {
+        "name": "Eldon Sellers",
+        "label": "PERSON"
+      },
+      {
+        "name": "Jeff Dasovich",
+        "label": "PERSON"
+      },
+      {
+        "name": "Cameron",
+        "label": "PERSON"
+      },
+      {
+        "name": "Prentice Sellers",
+        "label": "PERSON"
+      },
+      {
+        "name": "Scott Laughlin",
+        "label": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "source_entity": "Nancy Sellers",
+        "target_entity": "Eldon Sellers",
+        "relation_type": "RELATED"
+      }
+    ],
+    "claims": [
+      {
+        "subject": "Nancy Sellers",
+        "fact": "reinvited to Cassoulet dinner",
+        "evidence_quote": "Your father and I have been reinvited to the Cassoulet dinner on February 16th",
+        "timestamp": "Thu, 8 Nov 2001 15:30:33 -0800 (PST)",
+        "source_file": "dasovich-j/deleted_items/1925",
+        "confidence": 1.0
+      }
+    ],
+    "metadata": {
+      "file": "dasovich-j/deleted_items/1925."
+    }
+  },
+  {
+    "entities": [
+      {
+        "name": "CERA",
+        "label": "ORG"
+      }
+    ],
+    "relationships": [
+      {
+        "source_entity": "CERA",
+        "target_entity": "Spanish power market",
+        "relation_type": "ANALYZES"
+      }
+    ],
+    "claims": [
+      {
+        "subject": "Spanish power market",
+        "fact": "headed for a shortage in capacity",
+        "evidence_quote": "The Spanish power market could be headed for a shortage in capacity for the next several years.",
+        "timestamp": "Thu, 17 Jan 2002 19:10:19 -0800 (PST)",
+        "source_file": "kaminski-v/deleted_items/360",
+        "confidence": 0.8
+      }
+    ],
+    "metadata": {
+      "file": "kaminski-v/deleted_items/360."
+    }
+  },
+  {
+    "entities": [
+      {
+        "name": "Ribozyme",
+        "label": "ORG"
+      },
+      {
+        "name": "Colleen Parker",
+        "label": "PERSON"
+      },
+      {
+        "name": "Mary Jo Brown",
+        "label": "PERSON"
+      }
+    ],
+    "relationships": [
+      {
+        "source_entity": "Ribozyme",
+        "target_entity": "Anti-Hepatitis C Ribozyme Safety and Pharmacokinetics Trial",
+        "relation_type": "CONDUCTED_TRAIL"
+      }
+    ],
+    "claims": [
+      {
+        "subject": "Anti-Hepatitis C Ribozyme Safety and Pharmacokinetics Trial",
+        "fact": "Successfully Completed",
+        "evidence_quote": "Anti-Hepatitis C Ribozyme Safety and Pharmacokinetics Trial Successfully Completed",
+        "timestamp": "09/11/2000",
+        "source_file": "lay-k/notes_inbox/119",
+        "confidence": 1.0
+      }
+    ],
+    "metadata": {
+      "file": "lay-k/notes_inbox/119."
+    }
+  }
+]

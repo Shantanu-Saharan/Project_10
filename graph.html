@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#00d4ff", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:0", "label": "Richard B. Sanders", "shape": "dot", "title": "Entity: Richard B. Sanders"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:1", "label": "bwanaro1", "shape": "dot", "title": "Node: bwanaro1"}, {"color": "#00d4ff", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "b..sanders@enron.com", "shape": "dot", "title": "Entity: b..sanders@enron.com"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:3", "label": "tried to call bwanaro1@hotmail..", "shape": "dot", "title": "Claim: tried to call bwanaro1@hotmail.com"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:73", "label": "tried to call bwanaro1@hotmail..", "shape": "dot", "title": "Claim: tried to call bwanaro1@hotmail.com"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:110", "label": "tried to call bwanaro1@hotmail..", "shape": "dot", "title": "Claim: tried to call bwanaro1@hotmail.com"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:141", "label": "tried to call bwanaro1@hotmail..", "shape": "dot", "title": "Claim: tried to call bwanaro1@hotmail.com"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:172", "label": "tried to call bwanaro1@hotmail..", "shape": "dot", "title": "Claim: tried to call bwanaro1@hotmail.com"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:203", "label": "tried to call bwanaro1@hotmail..", "shape": "dot", "title": "Claim: tried to call bwanaro1@hotmail.com"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:234", "label": "tried to call bwanaro1@hotmail..", "shape": "dot", "title": "Claim: tried to call bwanaro1@hotmail.com"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:265", "label": "tried to call bwanaro1@hotmail..", "shape": "dot", "title": "Claim: tried to call bwanaro1@hotmail.com"}, {"color": "#00d4ff", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "The Economist", "shape": "dot", "title": "Entity: The Economist"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "Marconi", "shape": "dot", "title": "Node: Marconi"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "European Commission", "shape": "dot", "title": "Node: European Commission"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "Compaq Computer", "shape": "dot", "title": "Node: Compaq Computer"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:8", "label": "Microsoft", "shape": "dot", "title": "Node: Microsoft"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:9", "label": "Baltimore Technologies", "shape": "dot", "title": "Node: Baltimore Technologies"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:10", "label": "Webvan", "shape": "dot", "title": "Node: Webvan"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:11", "label": "Real Madrid", "shape": "dot", "title": "Node: Real Madrid"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:12", "label": "Lloyds TSB", "shape": "dot", "title": "Node: Lloyds TSB"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:13", "label": "CSFB", "shape": "dot", "title": "Node: CSFB"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:14", "label": "Euronext", "shape": "dot", "title": "Node: Euronext"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:15", "label": "Merrill Lynch", "shape": "dot", "title": "Node: Merrill Lynch"}, {"color": "#999999", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:16", "label": "FTSE International", "shape": "dot", "title": "Node: FTSE International"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:41", "label": "John Mayo was forced to resign..", "shape": "dot", "title": "Claim: John Mayo was forced to resign only two weeks before he was to have become chief executive"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:87", "label": "John Mayo was forced to resign..", "shape": "dot", "title": "Claim: John Mayo was forced to resign only two weeks before he was to have become chief executive"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:123", "label": "John Mayo was forced to resign..", "shape": "dot", "title": "Claim: John Mayo was forced to resign only two weeks before he was to have become chief executive"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:154", "label": "John Mayo was forced to resign..", "shape": "dot", "title": "Claim: John Mayo was forced to resign only two weeks before he was to have become chief executive"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:185", "label": "John Mayo was forced to resign..", "shape": "dot", "title": "Claim: John Mayo was forced to resign only two weeks before he was to have become chief executive"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:216", "label": "John Mayo was forced to resign..", "shape": "dot", "title": "Claim: John Mayo was forced to resign only two weeks before he was to have become chief executive"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:247", "label": "John Mayo was forced to resign..", "shape": "dot", "title": "Claim: John Mayo was forced to resign only two weeks before he was to have become chief executive"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:278", "label": "John Mayo was forced to resign..", "shape": "dot", "title": "Claim: John Mayo was forced to resign only two weeks before he was to have become chief executive"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:42", "label": "raided mobile-phone companies ..", "shape": "dot", "title": "Claim: raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:88", "label": "raided mobile-phone companies ..", "shape": "dot", "title": "Claim: raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:124", "label": "raided mobile-phone companies ..", "shape": "dot", "title": "Claim: raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:155", "label": "raided mobile-phone companies ..", "shape": "dot", "title": "Claim: raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:186", "label": "raided mobile-phone companies ..", "shape": "dot", "title": "Claim: raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:217", "label": "raided mobile-phone companies ..", "shape": "dot", "title": "Claim: raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:248", "label": "raided mobile-phone companies ..", "shape": "dot", "title": "Claim: raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:279", "label": "raided mobile-phone companies ..", "shape": "dot", "title": "Claim: raided mobile-phone companies in Britain and Germany as part of an investigation into price-fixing on international charges in both countries"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:43", "label": "gave a warning that profits in..", "shape": "dot", "title": "Claim: gave a warning that profits in its latest quarter would be down sharply"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:89", "label": "gave a warning that profits in..", "shape": "dot", "title": "Claim: gave a warning that profits in its latest quarter would be down sharply"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:125", "label": "gave a warning that profits in..", "shape": "dot", "title": "Claim: gave a warning that profits in its latest quarter would be down sharply"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:156", "label": "gave a warning that profits in..", "shape": "dot", "title": "Claim: gave a warning that profits in its latest quarter would be down sharply"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:187", "label": "gave a warning that profits in..", "shape": "dot", "title": "Claim: gave a warning that profits in its latest quarter would be down sharply"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:218", "label": "gave a warning that profits in..", "shape": "dot", "title": "Claim: gave a warning that profits in its latest quarter would be down sharply"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:249", "label": "gave a warning that profits in..", "shape": "dot", "title": "Claim: gave a warning that profits in its latest quarter would be down sharply"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:280", "label": "gave a warning that profits in..", "shape": "dot", "title": "Claim: gave a warning that profits in its latest quarter would be down sharply"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:44", "label": "is to allow PC makers more fre..", "shape": "dot", "title": "Claim: is to allow PC makers more freedom to change the Windows desktop"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:90", "label": "is to allow PC makers more fre..", "shape": "dot", "title": "Claim: is to allow PC makers more freedom to change the Windows desktop"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:126", "label": "is to allow PC makers more fre..", "shape": "dot", "title": "Claim: is to allow PC makers more freedom to change the Windows desktop"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:157", "label": "is to allow PC makers more fre..", "shape": "dot", "title": "Claim: is to allow PC makers more freedom to change the Windows desktop"}, {"color": "#ffcc00", "font": {"color": "white"}, "id": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:188", "label": "is to allow PC makers more fre..", "shape": "dot", "title": "Claim: is to allow PC makers more freedom to change the Windows desktop"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:0", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:1"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:3"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:73"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:110"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:141"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:172"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:203"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:234"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:2", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:265"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:8"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:9"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:10"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:11"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:12"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:13"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:14"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:15"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:4", "label": "RELATION", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:16"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:41"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:87"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:123"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:154"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:185"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:216"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:247"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:5", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:278"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:42"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:88"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:124"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:155"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:186"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:217"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:248"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:6", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:279"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:43"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:89"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:125"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:156"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:187"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:218"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:249"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:7", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:280"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:8", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:44"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:8", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:90"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:8", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:126"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:8", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:157"}, {"arrows": "to", "from": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:8", "label": "HAS_CLAIM", "to": "4:199c9a35-b82b-4098-858f-55ed2a79ba50:188"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
