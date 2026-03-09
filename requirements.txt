@@ -1,0 +1,12 @@
+# Web Interface
+streamlit>=1.30.0
+
+# Database & Graph Logic
+neo4j>=5.14.0
+networkx>=3.1
+
+# Visualization
+pyvis>=0.3.1
+
+# Data Processing
+pandas>=2.1.0––
