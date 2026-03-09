@@ -1,4 +1,4 @@
-Enron Memory Graph-RAG Explorer
+# Enron Memory Graph-RAG Explorer
 An intelligent memory graph that transforms unstructured email communication into a grounded, queryable knowledge base using Neo4j and Streamlit.
 
 Design & Methodology
