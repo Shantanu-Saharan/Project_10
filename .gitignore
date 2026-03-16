@@ -1,0 +1,14 @@
+# data
+data/raw/*.csv
+data/processed/*.json
+
+# python
+__pycache__/
+*.pyc
+
+# environments
+venv/
+.venv/
+
+# outputs
+output/*.html

@@ -1,0 +1,16 @@
+# Processed pipeline outputs
+data/processed/*.json
+
+# Raw dataset (large)
+data/raw/*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Graph outputs
+output/*.html

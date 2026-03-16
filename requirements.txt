@@ -1,0 +1,9 @@
+pandas
+pydantic
+groq
+instructor
+neo4j
+networkx
+matplotlib
+pyvis
+streamlit
