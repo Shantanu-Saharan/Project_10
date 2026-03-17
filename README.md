@@ -63,6 +63,7 @@ Project_10/
 ├── app.py
 └── docs/
     └── design_notes.md
+```
 
 # System Architecture
 
