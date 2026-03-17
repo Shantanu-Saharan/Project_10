@@ -35,45 +35,34 @@ data/raw/enron_sample.csv
 
 # Repository Structure
 
+## 📁 Repository Structure
+
+```bash
 Project_10/
-│
 ├── README.md
 ├── requirements.txt
-│
 ├── data/
-│ ├── raw/
-│ │   └── enron_sample.csv
-│ └── processed/
-│     ├── extracted_memories.json
-│     ├── deduped_memories.json
-│     └── retrieval_examples.json
-│
-├── output/
-│   └── screenshots/
-│
+│   ├── raw/
+│   │   └── enron_sample.csv
+│   ├── processed/
+│   └── output/
+│       └── screenshots/
 ├── extraction/
-│ ├── schema.py
-│ ├── processor.py
-│ └── extraction_pipeline.py
-│
+│   ├── schema.py
+│   ├── processor.py
+│   └── extraction_pipeline.py
 ├── deduplication/
-│ └── deduplication.py
-│
-├── graph/
-│ ├── load_to_neo4j.py
-│ └── check_graph.py
-│
+│   └── deduplication.py
 ├── retrieval/
-│ └── retrieve_memory.py
-│
+│   └── retrieve_memory.py
+├── graph/
+│   ├── load_to_neo4j.py
+│   └── check_graph.py
 ├── visualization/
-│ ├── visualize_graph.py
-│ └── app.py
-│
+│   └── visualize_graph.py
+├── app.py
 └── docs/
-└── design_notes.md
-
----
+    └── design_notes.md
 
 # System Architecture
 
