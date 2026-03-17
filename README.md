@@ -42,14 +42,14 @@ Project_10/
 │
 ├── data/
 │ ├── raw/
-│ │ └── enron_sample.csv
+│ │   └── enron_sample.csv
 │ └── processed/
-│ ├── extracted_memories.json
-│ ├── deduped_memories.json
-│ └── retrieval_examples.json
+│     ├── extracted_memories.json
+│     ├── deduped_memories.json
+│     └── retrieval_examples.json
 │
 ├── output/
-│ └── screenshots/
+│   └── screenshots/
 │
 ├── extraction/
 │ ├── schema.py
